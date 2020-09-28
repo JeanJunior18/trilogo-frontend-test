@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Primary Colors */
+  --color-purple-1: #4C12A1;
+  --color-purple-dark: #1F1F49;
+  --color-purple-light: #9B61D8;
+  --color-purple-4: #B19FE3;
+  --color-purple-5: #8D89A5;
+  --color-purple-6: #CAD1EB;
+  /* Secondary Colors */
+  --color-blue: #008FFF;
+  --color-blue-light: #4FCBE8;
+  --color-green: #40D36C;
+  --color-green-light: #9DF4B4;
+  --color-orange: #FF722A;
+  --color-orange-light: #FC9E23;
+  --color-yellow: #FFBC00;
+  --color-yellow-light: #FCD949;
+  /* Status */
+  --color-status-created: #F5222D;
+  --color-status-executed: #D4662D;
+  --color-status-inspected: #52C41A;
+  --color-status-filed: #C1B9B9;
+  --color-status-canceled: #8D89A5;
+  /* Default Gray */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-text-primary: #141414 ;
+  --color-text-disabled: #ACACAC;
+  --color-gray-900: #212121;
+  --color-gray-800: #292929;
+  --color-gray-200: #C8C8C8;
+  --color-gray-100: #E1E1E1;
+  --color-gray-50: #F1F1F1;
+  --color-gray-25: #F8F8F8;
+}
