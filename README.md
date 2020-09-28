@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio Front-End #
 
-## Available Scripts
+Nesse desafio, a tarefa é implementar um CRUD de Tickets, sendo listados e gerenciados em um quadro Kanban.
 
-In the project directory, you can run:
+Um Ticket consiste de uma ocorrência de algum problema, com os seguintes campos:
 
-### `yarn start`
+* Descrição: Texto - uma descrição do problema
+* Tipo: Select com opções "Bem", "Procedimento" e "Predial"
+* Responsável: Select com nomes de usuários
+* Campo para imagem será um diferencial
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O kanban deverá conter 4 colunas, que representarão os status do ticket: Aberto, Executado, Vistoriado e Arquivado.
+* Cada ticket deverá aparecer como card no kanban.
+* Todo novo ticket deve ter o status aberto e ser incluído na coluna "Aberto".
+* O card deverá conter um botão de opções, com as opções de editar e excluir o ticket.
+* O card poderá ser movido para outra coluna, porém seguindo o seguinte fluxo: Aberto > Executado > Vistoriado > Arquivado;
+* Ao mover o card para outra coluna, deverá exibir um modal de alerta para o usuário confirmar se deseja realizar a operação.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Os registros deverão ser armazenados na memória do navegador, de forma que os dados não se percam ao atualizar a página.
 
-### `yarn test`
+O projeto deverá ser implementando em Javascript, utilizando React JS com Redux para gerência de estado.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para dar início ao desafio, o candidato deve dar um fork no repositório e, ao fim do desenvolvimento, dar acesso ao usuário **_joel@trilogo.com.br_** ao seu repositório para análise do trabalho.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Extras**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Utilização de React Hooks
+* Implementação de testes unitários
+* CSS Modules
+* Utilização do Ant Design (biblioteca React UI)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Os itens extras (opcionais) contarão positivamente na análise do seu desafio.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Arquivos de layout:
+https://www.figma.com/file/nfjOAtSRFGj9zXNBa18INs/Desafio-front?node-id=12%3A20
