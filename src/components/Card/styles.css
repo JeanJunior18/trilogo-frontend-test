@@ -7,6 +7,17 @@
     width: 95%;
     margin: 4px auto;
     padding: 14px 16px 24px;
+
+    cursor: grab;
+}
+
+.card:active {
+    cursor: grabbing;
+    border: 2px dashed #E5E5E5;
+
+}
+.card:active :nth-child(n){
+    opacity: 0.8;
 }
 
 .card .type{

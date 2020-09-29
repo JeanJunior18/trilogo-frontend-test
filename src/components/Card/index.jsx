@@ -1,11 +1,19 @@
 import React from 'react';
+import { useDrag } from 'react-dnd';
 import moreIcon from '../../assets/icons/more.png';
 
 import './styles.css'
 
 function Card({title, type, inCharge}) {
+  const [{ isDragging }, dragRef] = useDrag({
+    item: { type: 'CARD' },
+    collect: monitor => ({
+      isDragging: monitor.isDragging()
+    })
+  })
+
   return (
-      <article className="card">
+      <article className="card" ref={dragRef}>
           <span className="type">
             {type}
           </span>
