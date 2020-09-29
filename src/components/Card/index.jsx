@@ -5,11 +5,8 @@ import moreIcon from '../../assets/icons/more.png';
 import './styles.css'
 
 function Card(props) {
-  const [{ isDragging }, dragRef] = useDrag({
+  const [, dragRef] = useDrag({
     item: { type: 'CARD', props},
-    collect: monitor => ({
-      isDragging: monitor.isDragging()
-    })
   })
 
   return (
