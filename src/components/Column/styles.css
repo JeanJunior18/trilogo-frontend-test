@@ -1,0 +1,15 @@
+.column {
+    flex: 0 0 275px;
+    width: 275px;
+    height: 95%;
+    border-radius: 8px;
+    background-color: var(--color-white);
+    overflow: hidden;
+}
+
+
+.column .title h3 {
+    color: var(--color-text-primary);
+    padding: 10px;
+    text-transform: capitalize;
+}

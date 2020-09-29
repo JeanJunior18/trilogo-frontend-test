@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 95%;
+    margin: 4px auto;
+    padding: 14px 16px 24px;
+}
+
+.card .type{
+    border-radius: 10px;
+    background-color: var(--color-purple-6);
+    position: absolute;
+    padding: 0 10px;
+
+    font-size: 12px;
+    text-transform: capitalize;
+    color: var(--color-purple-dark);
+}
+
+.card .title {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card .title h3 {
+    color: linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #000000, #000000), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FF0000;
+    opacity: 0.6;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    
+    
+}
+
+.card .title .code {
+    color: #000000;
+    font-weight: 500;
+}
+
+.card .incharge {
+    display: flex;
+    justify-content: space-between;
+
+    letter-spacing: 0.5px;
+    line-height: 16px;
+    font-size: 12px;
+}

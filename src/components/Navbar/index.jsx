@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css'
-import { Button } from 'antd'
 import logo from '../../assets/logo.png'
 import addIcon from '../../assets/icons/add.png'
 
@@ -11,11 +10,10 @@ function Navbar() {
             <img src={logo} alt="trílogo"/>
         </div>
 
-        <Button
-            icon={<addIcon />}
-        >
+        <button type="button">
+            <img src={addIcon} alt="+"/>
             Novo Ticket
-        </Button>
+        </button>
     </nav>
   );
 }
