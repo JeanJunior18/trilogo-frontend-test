@@ -1,12 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Card from '../Card';
-
-const cards = [
-  {id:1,},
-  {id:2,},
-  {id:3,},
-]
+import { useSelector } from 'react-redux';
 
 const color = {
   'abertos':'rgba(245,34,45,0.25)',
@@ -17,13 +12,18 @@ const color = {
 }
 
 function Column({status}) {
+
+  const cards = useSelector(state => state.card);
+
+  const selectedCards = cards.filter(tickets => tickets.column === status)
+
   return (
     <>
       <section className="column">
         <article className="title" style={{background: color[status]}}>
           <h3>{status}</h3>
         </article>
-        {cards.map(()=>(<Card type={"procedimento"} title={"Consertar Vazamento"} inCharge={"Yudi Tamashiro"} />))}
+        {selectedCards.map((card)=>(<Card type={card.type} title={card.title} inCharge={card.inCharge} />))}
       </section>
     </>
   );
