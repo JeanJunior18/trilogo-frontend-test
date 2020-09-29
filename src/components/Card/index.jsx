@@ -4,9 +4,9 @@ import moreIcon from '../../assets/icons/more.png';
 
 import './styles.css'
 
-function Card({title, type, inCharge}) {
+function Card(props) {
   const [{ isDragging }, dragRef] = useDrag({
-    item: { type: 'CARD' },
+    item: { type: 'CARD', props},
     collect: monitor => ({
       isDragging: monitor.isDragging()
     })
@@ -15,16 +15,16 @@ function Card({title, type, inCharge}) {
   return (
       <article className="card" ref={dragRef}>
           <span className="type">
-            {type}
+            {props.type}
           </span>
 
           <span className="title">
-            <span className="code">{6523}</span>
-            <h3>{title}</h3>
+            <span className="code">{props.id}</span>
+            <h3>{props.title}</h3>
           </span>
 
           <div className="incharge">
-            <span>{inCharge}</span>
+            <span>{props.inCharge}</span>
             <div className="more">
               <img src={moreIcon} alt="..."/>
             </div>

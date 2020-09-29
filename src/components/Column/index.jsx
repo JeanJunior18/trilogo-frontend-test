@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles.css';
 import Card from '../Card';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useDrop } from 'react-dnd';
 
 const color = {
   'abertos':'rgba(245,34,45,0.25)',
@@ -13,17 +14,41 @@ const color = {
 
 function Column({status}) {
 
-  const cards = useSelector(state => state.card);
+  const dispatch = useDispatch();
 
-  const selectedCards = cards.filter(tickets => tickets.column === status)
+  const cards = useSelector(state => state);
+  const selectedCards = cards.filter(tickets => tickets.status === status)
+
+  const [, dropRef] = useDrop({
+    accept: 'CARD',
+    hover(item, monitor){
+      const cardStatus = item.status;
+      const columnStatus = status;
+     
+      if(cardStatus !== columnStatus){
+        
+        const cardId = item.props.id
+        dispatch({type: 'CHANGE_STATUS', data:{cardId, columnStatus}})
+      }
+    }
+  })
 
   return (
     <>
-      <section className="column">
+      <section className="column" ref={dropRef}>
         <article className="title" style={{background: color[status]}}>
           <h3>{status}</h3>
         </article>
-        {selectedCards.map((card)=>(<Card type={card.type} title={card.title} inCharge={card.inCharge} />))}
+        {selectedCards.map((card)=>(
+          <Card 
+            key={card.id}
+            id={card.id} 
+            type={card.type} 
+            title={card.title} 
+            inCharge={card.inCharge} 
+            status={status} 
+          />
+          ))}
       </section>
     </>
   );
