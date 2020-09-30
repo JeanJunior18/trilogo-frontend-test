@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1b25f42e2b9d0b7592c6392252416aec",
+    "revision": "111496a7df7dab3f2bd16a2e5b08a40f",
     "url": "/trilogo-frontend-test/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trilogo-frontend-test/static/css/2.220ccb42.chunk.css"
   },
   {
-    "revision": "be44554c6c20dca01f0e",
-    "url": "/trilogo-frontend-test/static/css/main.2b567794.chunk.css"
+    "revision": "ab7810c5c16ebaf51b5a",
+    "url": "/trilogo-frontend-test/static/css/main.e81fafca.chunk.css"
   },
   {
     "revision": "26e26216d3816d76f5fe",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trilogo-frontend-test/static/js/2.7ffafe7b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "be44554c6c20dca01f0e",
-    "url": "/trilogo-frontend-test/static/js/main.8661e444.chunk.js"
+    "revision": "ab7810c5c16ebaf51b5a",
+    "url": "/trilogo-frontend-test/static/js/main.11fb4f85.chunk.js"
   },
   {
     "revision": "15fcecc26a8f19c42a36",
