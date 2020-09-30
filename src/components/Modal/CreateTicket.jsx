@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Modal } from 'antd';
+import { Input, Modal, Select } from 'antd';
+import { Option } from 'antd/lib/mentions';
 import { useDispatch, useSelector } from 'react-redux';
 import { users, types } from '../../config/page';
 
 import './styles.css'
 
 function ModalComponent() {
-  const visible = useSelector(state => state.modal);
+  const visible = useSelector(state => state.modalCreate);
 
   const dispatch = useDispatch();
 
@@ -16,14 +17,21 @@ function ModalComponent() {
   const [error, setError] = useState(false)
 
   function closeModal(){
-    dispatch({type: 'CHANGE_MODAL'})
+    dispatch({type: 'OPEN_MODAL_CREATE'})
+    setUser(null)
+    setDescription(null)
+    setType(null)
   }
 
   function handleAddTicket(e){
     e.preventDefault();
+    console.log(description, type, user)
     if(description && user && type){
       dispatch({type: 'ADD_CARD', card: {user, type, description}})
-      dispatch({type: 'CHANGE_MODAL'})
+      dispatch({type: 'OPEN_MODAL_CREATE'})
+      setUser(null)
+      setDescription(null)
+      setType(null)
     }
     else{
       setError(true)
@@ -40,27 +48,32 @@ function ModalComponent() {
     <form className="form">
       <fieldset>
         <label htmlFor="description">Descrição</label>
-        <input type="text" name="description" id="description" onChange={e=>setDescription(e.target.value)}/>
+        <Input 
+        type="text" 
+        name="description" 
+        id="description" 
+        onChange={e=>setDescription(e.target.value)} 
+        value={description}/>
       </fieldset>
          
       <fieldset>
         <label htmlFor="type">Tipo</label>
-        <select name="type" id="type" onChange={e=>setType(e.target.value)}>
-          <option></option>
+        <Select name="type" id="type" onChange={e=>setType(e)} value={type}>
+          <Option></Option>
           {types.map(type => (
-            <option key={type.id} value={type.title}>{type.title}</option>
+            <Option key={type.id} value={type.title}>{type.title}</Option>
           ))}
-        </select>
+        </Select>
       </fieldset>
       
       <fieldset>
         <label htmlFor="incharge">Responsável</label>
-        <select name="incharge" id="incharge" onChange={e=>setUser(e.target.value)}>
-          <option></option>
+        <Select name="incharge" id="incharge" onChange={e=>setUser(e)} value={user}>
+          <Option></Option>
           {users.map(user => (
-            <option key={user.id} value={user.name}>{user.name}</option>
+            <Option key={user.id} value={user.name}>{user.name}</Option>
             ))}
-        </select>
+        </Select>
       </fieldset>
       {error && <span>Preencha todos os campos</span>}
     </form>

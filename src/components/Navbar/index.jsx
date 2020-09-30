@@ -1,5 +1,4 @@
 import React from 'react';
-import ModalComponent from '../Modal';
 
 import './styles.css'
 import logo from '../../assets/logo.png'
@@ -10,7 +9,7 @@ function Navbar() {
   const dispatch = useDispatch();
 
   function openModal(){
-    dispatch({type: 'CHANGE_MODAL'});
+    dispatch({type: 'OPEN_MODAL_CREATE'});
   }
 
   return (
@@ -25,8 +24,6 @@ function Navbar() {
               Novo Ticket
           </button>
       </nav>
-
-      <ModalComponent />
     </>
   );
 }

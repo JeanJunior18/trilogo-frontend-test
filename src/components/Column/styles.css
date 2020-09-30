@@ -13,3 +13,16 @@
     padding: 10px;
     text-transform: capitalize;
 }
+.column .cardList {
+    height: 90%;
+    overflow-y: auto;
+}
+::-webkit-scrollbar{
+    background-color: #F5F5F5;
+    width: 8px;
+    border-radius: 16px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #D2CFDF;
+    border-radius: 16px;
+}

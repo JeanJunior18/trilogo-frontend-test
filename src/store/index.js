@@ -1,20 +1,12 @@
 
 import { combineReducers, createStore } from 'redux';
 import cards from './cards';
-import config from './config';
+import { modalCreate, modalUpdate, modalChange } from './modais';
 
 
 
-function modal(state=true, action){
-  switch(action.type){
-    case 'CHANGE_MODAL':
-      return !state;
-    default:
-      return state;
-  }
-}
 
-const reducers = combineReducers({cards, modal, config});
+const reducers = combineReducers({cards, modalCreate, modalUpdate, modalChange});
 const store = createStore(reducers)
 
 export default store;

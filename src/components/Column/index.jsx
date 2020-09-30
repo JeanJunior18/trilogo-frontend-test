@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './styles.css';
 import Card from '../Card';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,14 +16,13 @@ function Column({status}) {
 
   const [, dropRef] = useDrop({
     accept: 'CARD',
-    hover(item){
-      const cardStatus = item.status;
+    drop(item){
+      const cardStatus = item.props.status;
       const columnStatus = status;
      
       if(cardStatus !== columnStatus){
-        
         const cardId = item.props.id
-        dispatch({type: 'CHANGE_STATUS', data:{cardId, columnStatus}})
+        dispatch({type: 'OPEN_MODAL_CHANGE', data:{cardId, columnStatus}})
       }
     }
   })
@@ -34,16 +33,18 @@ function Column({status}) {
         <article className="title" style={{background: labelColors[status]}}>
           <h3>{status}</h3>
         </article>
-        {selectedCards.map((card)=>(
-          <Card 
-            key={card.id}
-            id={card.id} 
-            type={card.type} 
-            title={card.title} 
-            inCharge={card.inCharge} 
-            status={status} 
-          />
-          ))}
+        <section className="cardList">
+          {selectedCards.map((card)=>(
+            <Card 
+              key={card.id}
+              id={card.id} 
+              type={card.type} 
+              title={card.title} 
+              inCharge={card.inCharge} 
+              status={status} 
+            />
+            ))}
+        </section>
       </section>
     </>
   );

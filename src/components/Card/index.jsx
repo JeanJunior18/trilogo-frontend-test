@@ -1,13 +1,43 @@
-import React from 'react';
+import { Popover, Button, Popconfirm } from 'antd';
+import React, { useState } from 'react';
 import { useDrag } from 'react-dnd';
+import { useDispatch } from 'react-redux';
 import moreIcon from '../../assets/icons/more.png';
 
 import './styles.css'
 
 function Card(props) {
+  const dispatch = useDispatch();
+
+  const [popView, setPopView] = useState(false);
+
   const [, dragRef] = useDrag({
     item: { type: 'CARD', props},
   })
+
+  const content = (
+    <div id='popover'>
+      <Button type='text' onClick={handleEdit}>Editar</Button>
+      <Popconfirm
+        placement="bottom"
+        title="Tem Certeza que deseja excluir este Ticket?"
+        onConfirm={handleDelete}
+        okText="Excluir"
+        cancelText="Cancelar"
+      >
+        <Button type='text'>Excluir</Button>
+      </Popconfirm>
+    </div>
+  )
+
+  function handleEdit(){
+    setPopView(false)
+    const {title, type, inCharge} = props
+    dispatch({type: 'OPEN_MODAL_UPDATE', data:{title, type, inCharge}})
+  }
+  function handleDelete(){
+    setPopView(false)
+  }
 
   return (
       <article className="card" ref={dragRef}>
@@ -22,8 +52,13 @@ function Card(props) {
 
           <div className="incharge">
             <span>{props.inCharge}</span>
+
             <div className="more">
-              <img src={moreIcon} alt="..."/>
+              <Popover content={content} trigger="click" visible={popView} onVisibleChange={()=>setPopView(!popView)}>
+                <Button className="button" style={{border: "none"}}>
+                  <img src={moreIcon} alt="..."/>
+                </Button>
+              </Popover>
             </div>
           </div>
       </article>
