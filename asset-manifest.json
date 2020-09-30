@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/trilogo-frontend-test/static/css/main.e81fafca.chunk.css",
-    "main.js": "/trilogo-frontend-test/static/js/main.11fb4f85.chunk.js",
-    "main.js.map": "/trilogo-frontend-test/static/js/main.11fb4f85.chunk.js.map",
+    "main.css": "/trilogo-frontend-test/static/css/main.57b0ff22.chunk.css",
+    "main.js": "/trilogo-frontend-test/static/js/main.89806fc2.chunk.js",
+    "main.js.map": "/trilogo-frontend-test/static/js/main.89806fc2.chunk.js.map",
     "runtime-main.js": "/trilogo-frontend-test/static/js/runtime-main.b88fd73e.js",
     "runtime-main.js.map": "/trilogo-frontend-test/static/js/runtime-main.b88fd73e.js.map",
     "static/css/2.220ccb42.chunk.css": "/trilogo-frontend-test/static/css/2.220ccb42.chunk.css",
-    "static/js/2.7ffafe7b.chunk.js": "/trilogo-frontend-test/static/js/2.7ffafe7b.chunk.js",
-    "static/js/2.7ffafe7b.chunk.js.map": "/trilogo-frontend-test/static/js/2.7ffafe7b.chunk.js.map",
+    "static/js/2.96d749f2.chunk.js": "/trilogo-frontend-test/static/js/2.96d749f2.chunk.js",
+    "static/js/2.96d749f2.chunk.js.map": "/trilogo-frontend-test/static/js/2.96d749f2.chunk.js.map",
     "index.html": "/trilogo-frontend-test/index.html",
-    "precache-manifest.7eef375640d62d9419633756792a2d87.js": "/trilogo-frontend-test/precache-manifest.7eef375640d62d9419633756792a2d87.js",
+    "precache-manifest.02c291ae94f3f65c0bb555d61fabd13b.js": "/trilogo-frontend-test/precache-manifest.02c291ae94f3f65c0bb555d61fabd13b.js",
     "service-worker.js": "/trilogo-frontend-test/service-worker.js",
     "static/css/2.220ccb42.chunk.css.map": "/trilogo-frontend-test/static/css/2.220ccb42.chunk.css.map",
-    "static/css/main.e81fafca.chunk.css.map": "/trilogo-frontend-test/static/css/main.e81fafca.chunk.css.map",
-    "static/js/2.7ffafe7b.chunk.js.LICENSE.txt": "/trilogo-frontend-test/static/js/2.7ffafe7b.chunk.js.LICENSE.txt"
+    "static/css/main.57b0ff22.chunk.css.map": "/trilogo-frontend-test/static/css/main.57b0ff22.chunk.css.map",
+    "static/js/2.96d749f2.chunk.js.LICENSE.txt": "/trilogo-frontend-test/static/js/2.96d749f2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b88fd73e.js",
     "static/css/2.220ccb42.chunk.css",
-    "static/js/2.7ffafe7b.chunk.js",
-    "static/css/main.e81fafca.chunk.css",
-    "static/js/main.11fb4f85.chunk.js"
+    "static/js/2.96d749f2.chunk.js",
+    "static/css/main.57b0ff22.chunk.css",
+    "static/js/main.89806fc2.chunk.js"
   ]
 }
