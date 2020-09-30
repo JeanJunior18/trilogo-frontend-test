@@ -50,31 +50,48 @@ function ModalComponent() {
     <form className="form">
       <fieldset>
         <label htmlFor="description">Descrição</label>
+
         <Input 
-        type="text" 
-        name="description" 
-        id="description" 
-        onChange={e=>setDescription(e.target.value)} 
-        value={description}/>
+          type="text" 
+          name="description" 
+          id="description" 
+          onChange={e=>setDescription(e.target.value)} 
+          value={description}
+        />
       </fieldset>
          
       <fieldset>
         <label htmlFor="type">Tipo</label>
-        <Select name="type" id="type" onChange={e=>setType(e)} value={type}>
-          <Option></Option>
-          {types.map(type => (
-            <Option key={type.id} value={type.title}>{type.title}</Option>
-          ))}
+
+        <Select 
+          name="type"
+          id="type" 
+          onChange={e=>setType(e)} 
+          value={type}
+        >
+        <Option></Option>
+
+        {types.map(type => (
+          <Option key={type.id} value={type.title}>{type.title}</Option>
+        ))}
+
         </Select>
       </fieldset>
       
       <fieldset>
         <label htmlFor="incharge">Responsável</label>
-        <Select name="incharge" id="incharge" onChange={e=>setUser(e)} value={user}>
-          <Option></Option>
-          {users.map(user => (
-            <Option key={user.id} value={user.name}>{user.name}</Option>
-            ))}
+
+        <Select 
+          name="incharge" 
+          id="incharge" 
+          onChange={e=>setUser(e)} 
+          value={user}
+        >
+        <Option></Option>
+
+        {users.map(user => (
+          <Option key={user.id} value={user.name}>{user.name}</Option>
+        ))}
         </Select>
       </fieldset>
       

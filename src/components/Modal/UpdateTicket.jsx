@@ -29,6 +29,7 @@ function ModalComponentUpdate() {
 
   function handleAddTicket(e){
     e.preventDefault();
+
     if(description && user && type){
       dispatch({type: 'UPDATE_CARD', data: {description, user, type}})
       dispatch({type: 'CLOSE_MODAL_UPDATE'})
@@ -48,9 +49,11 @@ function ModalComponentUpdate() {
       onCancel={closeModal}
       onOk={handleAddTicket}
     >
+
     <form className="form">
       <fieldset>
         <label htmlFor="description">Descrição</label>
+
         <Input 
           type="text" 
           name="description" 
@@ -63,6 +66,7 @@ function ModalComponentUpdate() {
          
       <fieldset>
         <label htmlFor="type">Tipo</label>
+
         <Select 
           name="type" 
           id="type" 
@@ -70,15 +74,19 @@ function ModalComponentUpdate() {
           defaultValue={type}
           value={type}
         >
+
           <Option></Option>
+
           {types.map(type => (
             <Option key={type.id} value={type.title}>{type.title}</Option>
           ))}
+
         </Select>
       </fieldset>
       
       <fieldset>
         <label htmlFor="incharge">Responsável</label>
+
         <Select 
           name="incharge" 
           id="incharge" 
@@ -87,11 +95,14 @@ function ModalComponentUpdate() {
           value={user}
         >
           <Option></Option>
+
           {users.map(user => (
             <Option key={user.id} value={user.name}>{user.name}</Option>
-            ))}
+          ))}
+
         </Select>
       </fieldset>
+      
       {error && <span>Preencha todos os campos</span>}
     </form>
   </Modal>

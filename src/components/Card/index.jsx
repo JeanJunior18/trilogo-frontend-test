@@ -18,6 +18,7 @@ function Card(props) {
   const content = (
     <div id='popover'>
       <Button type='text' onClick={handleEdit}>Editar</Button>
+
       <Popconfirm
         placement="bottom"
         title="Tem Certeza que deseja excluir este Ticket?"
@@ -25,7 +26,9 @@ function Card(props) {
         okText="Excluir"
         cancelText="Cancelar"
       >
+        
         <Button type='text'>Excluir</Button>
+
       </Popconfirm>
     </div>
   )
@@ -35,39 +38,41 @@ function Card(props) {
     const {title, type, inCharge} = props
     dispatch({type: 'OPEN_MODAL_UPDATE', data:{title, type, inCharge}})
   }
+  
   function handleDelete(){
     setPopView(false)
+    dispatch({type: 'DELETE_CARD', cardId: props.id})
   }
 
   return (
       <article className="card" ref={dragRef}>
 
-          {props.imageURL && (
-            <div className="image">
-              <img src={props.imageURL} alt="Imagem Anexada"/>
-            </div>
-          )}
-
-          <span className="type">
-            {props.type}
-          </span>
-
-          <span className="title">
-            <span className="code">{props.id}</span>
-            <h3>{props.title}</h3>
-          </span>
-
-          <div className="incharge">
-            <span>{props.inCharge}</span>
-
-            <div className="more">
-              <Popover content={content} trigger="click" visible={popView} onVisibleChange={()=>setPopView(!popView)}>
-                <Button className="button" style={{border: "none"}}>
-                  <img src={moreIcon} alt="..."/>
-                </Button>
-              </Popover>
-            </div>
+        {props.imageURL && (
+          <div className="image">
+            <img src={props.imageURL} alt="Imagem Anexada"/>
           </div>
+        )}
+
+        <span className="type">
+          {props.type}
+        </span>
+
+        <span className="title">
+          <span className="code">{props.id}</span>
+          <h3>{props.title}</h3>
+        </span>
+
+        <div className="incharge">
+          <span>{props.inCharge}</span>
+
+          <div className="more">
+            <Popover content={content} trigger="click" visible={popView} onVisibleChange={()=>setPopView(!popView)}>
+              <Button className="button" style={{border: "none"}}>
+                <img src={moreIcon} alt="..."/>
+              </Button>
+            </Popover>
+          </div>
+        </div>
       </article>
   );
 }

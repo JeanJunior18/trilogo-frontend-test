@@ -15,14 +15,14 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-          <div className="logo">
-              <img src={logo} alt="trílogo"/>
-          </div>
+        <div className="logo">
+          <img src={logo} alt="trílogo"/>
+        </div>
 
-          <button type="button" onClick={openModal}>
-              <img src={addIcon} alt="+"/>
-              Novo Ticket
-          </button>
+        <button type="button" onClick={openModal}>
+          <img src={addIcon} alt="+"/>
+          Novo Ticket
+        </button>
       </nav>
     </>
   );
