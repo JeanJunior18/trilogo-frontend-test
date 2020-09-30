@@ -1,19 +1,20 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { useDispatch, useSelector } from 'react-redux';
 import fileIcon from '../../assets/icons/vector3.png'
 
 import './styles.css'
 
-function Dropzone({ setIMG }) {
+function Dropzone() {
     
-  const [fileSentURL, setFileSentURL] = useState('');
+  const dispatch = useDispatch();
+  const fileSentURL = useSelector(state => state.img)
 
   const onDrop = useCallback(acceptedFiles => {
     const file = acceptedFiles[0];
     const fileURL = URL.createObjectURL(file);
-    setFileSentURL(fileURL)
-    setIMG(fileURL)
-  },[setIMG])
+    dispatch({type: 'SET_IMG', url: fileURL})
+  },[dispatch])
 
   const { getInputProps, getRootProps} = useDropzone({
     onDrop,
@@ -22,11 +23,11 @@ function Dropzone({ setIMG }) {
 
   return (
     <div id="dropzone" className="dropzone" {...getRootProps()}>
-      <input {...getInputProps()} accept='image/*' />
+      <input {...getInputProps()} accept='image/*'/>
 
       {fileSentURL ? (
         <div className="icon">
-            <img src={fileSentURL} alt="Imagem Anexada"/>
+            <img className="loadImg" src={fileSentURL} alt="Imagem Anexada"/>
         </div>
       ):(
         <>

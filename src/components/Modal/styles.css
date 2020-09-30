@@ -7,7 +7,7 @@
     margin-bottom: 15px;
 }
 
-.form input, .form div{
+.form input, .form .ant-select{
     width: 100%;
 }
 

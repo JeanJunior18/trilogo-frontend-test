@@ -1,5 +1,6 @@
 .dropzone {
     height: 110px;
+    max-width: 100%;
     background-color: rgba(0, 0, 0, 0.04);
     border: 1px dashed rgba(0, 0, 0, 0.09);
 
@@ -13,5 +14,9 @@
 .dropzone .icon {
     display: grid;
     place-items: center;
-    margin: 10px;
+    overflow: auto;
+}
+
+.dropzone .icon .loadImg {
+    max-width: 100%;
 }

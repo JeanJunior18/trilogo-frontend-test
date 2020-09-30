@@ -11,11 +11,11 @@ function ModalComponent() {
   const visible = useSelector(state => state.modalCreate);
 
   const dispatch = useDispatch();
+  const imageURL = useSelector(state => state.img)
 
   const [description, setDescription] = useState('');
   const [type, setType] = useState(null);
   const [user, setUser] = useState(null);
-  const [imageURL, setImageURL] = useState(null)
   const [error, setError] = useState(false)
 
   function closeModal(){
@@ -23,6 +23,7 @@ function ModalComponent() {
     setUser(null)
     setDescription(null)
     setType(null)
+    dispatch({type: 'UNSET_IMG'})
   }
 
   function handleAddTicket(e){
@@ -34,6 +35,7 @@ function ModalComponent() {
       setUser(null)
       setDescription(null)
       setType(null)
+      dispatch({type: 'UNSET_IMG'})
     }
     else{
       setError(true)
@@ -97,7 +99,7 @@ function ModalComponent() {
       
       <fieldset>
         <label htmlFor="dropzone">Image: </label>
-        <Dropzone setIMG={setImageURL} />
+        <Dropzone />
       </fieldset>
 
       {error && <span>Preencha todos os campos</span>}
