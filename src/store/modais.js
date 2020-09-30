@@ -1,6 +1,6 @@
 
 
-export function modalCreate(state=false, action){
+export function modalCreate(state=true, action){
     switch(action.type){
       case 'OPEN_MODAL_CREATE':
         return !state;

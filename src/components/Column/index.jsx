@@ -41,6 +41,7 @@ function Column({status}) {
               type={card.type} 
               title={card.title} 
               inCharge={card.inCharge} 
+              imageURL={card.imageURL}
               status={status} 
             />
             ))}

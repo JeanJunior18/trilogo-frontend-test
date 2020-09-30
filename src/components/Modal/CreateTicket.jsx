@@ -3,6 +3,7 @@ import { Input, Modal, Select } from 'antd';
 import { Option } from 'antd/lib/mentions';
 import { useDispatch, useSelector } from 'react-redux';
 import { users, types } from '../../config/page';
+import Dropzone from '../Dropzone';
 
 import './styles.css'
 
@@ -14,6 +15,7 @@ function ModalComponent() {
   const [description, setDescription] = useState('');
   const [type, setType] = useState(null);
   const [user, setUser] = useState(null);
+  const [imageURL, setImageURL] = useState(null)
   const [error, setError] = useState(false)
 
   function closeModal(){
@@ -27,7 +29,7 @@ function ModalComponent() {
     e.preventDefault();
     console.log(description, type, user)
     if(description && user && type){
-      dispatch({type: 'ADD_CARD', card: {user, type, description}})
+      dispatch({type: 'ADD_CARD', card: {user, type, description, imageURL}})
       dispatch({type: 'OPEN_MODAL_CREATE'})
       setUser(null)
       setDescription(null)
@@ -75,6 +77,12 @@ function ModalComponent() {
             ))}
         </Select>
       </fieldset>
+      
+      <fieldset>
+        <label htmlFor="dropzone">Image: </label>
+        <Dropzone setIMG={setImageURL} />
+      </fieldset>
+
       {error && <span>Preencha todos os campos</span>}
     </form>
   </Modal>

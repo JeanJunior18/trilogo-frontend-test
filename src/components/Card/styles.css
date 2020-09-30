@@ -20,6 +20,13 @@
     opacity: 0.8;
 }
 
+.card .image {
+    margin-bottom: 20px;
+}
+.card .image img {
+    max-width: 100%;
+}
+
 .card .type{
     border-radius: 10px;
     background-color: var(--color-purple-6);
@@ -34,7 +41,7 @@
 }
 
 .card .title {
-    margin-top: 25px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
 
@@ -57,6 +64,8 @@
 .card .incharge {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
 
     letter-spacing: 0.5px;
     line-height: 16px;

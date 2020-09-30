@@ -41,6 +41,13 @@ function Card(props) {
 
   return (
       <article className="card" ref={dragRef}>
+
+          {props.imageURL && (
+            <div className="image">
+              <img src={props.imageURL} alt="Imagem Anexada"/>
+            </div>
+          )}
+
           <span className="type">
             {props.type}
           </span>

@@ -9,6 +9,7 @@ function cards(state = JSON.parse(localStorage.getItem("cards")) || [], action) 
             title: action.card.description,
             type: action.card.type,
             inCharge: action.card.user,
+            imageURL: action.card.imageURL,
             status: 'abertos',
           }
         ];
@@ -21,12 +22,11 @@ function cards(state = JSON.parse(localStorage.getItem("cards")) || [], action) 
           card
         )
       case 'UPDATE_CARD':
-        const {description, user, type} = action.data
         return state.map(card => (card.id === action.data.cardId) ? {
             ...card,
-            title: description,
-            inCharge: user,
-            type: type 
+            title: action.data.description,
+            inCharge: action.data.user,
+            type: action.data.type 
           } :
           card
         )

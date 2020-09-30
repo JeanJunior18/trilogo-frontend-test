@@ -4,8 +4,6 @@ import cards from './cards';
 import { modalCreate, modalUpdate, modalChange } from './modais';
 
 
-
-
 const reducers = combineReducers({cards, modalCreate, modalUpdate, modalChange});
 const store = createStore(reducers)
 
