@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/trilogo-frontend-test/precache-manifest.02c291ae94f3f65c0bb555d61fabd13b.js"
+  "/trilogo-frontend-test/precache-manifest.3c5c234e92b7a242a1b12d1cde88226a.js"
 );
 
 self.addEventListener('message', (event) => {

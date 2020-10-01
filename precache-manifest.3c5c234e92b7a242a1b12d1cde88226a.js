@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2102510d8fcee5cfbec2163e62164671",
+    "revision": "b19646b1790355aa8d896f4b48a555a0",
     "url": "/trilogo-frontend-test/index.html"
   },
   {
-    "revision": "968ca6ebe2a054e32c27",
+    "revision": "0b5607060471dcf25098",
     "url": "/trilogo-frontend-test/static/css/2.220ccb42.chunk.css"
   },
   {
-    "revision": "80204c46bfd9dbe2cbea",
+    "revision": "80528def6e573833e8d6",
     "url": "/trilogo-frontend-test/static/css/main.57b0ff22.chunk.css"
   },
   {
-    "revision": "968ca6ebe2a054e32c27",
-    "url": "/trilogo-frontend-test/static/js/2.96d749f2.chunk.js"
+    "revision": "0b5607060471dcf25098",
+    "url": "/trilogo-frontend-test/static/js/2.6c2d2dd2.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/trilogo-frontend-test/static/js/2.96d749f2.chunk.js.LICENSE.txt"
+    "url": "/trilogo-frontend-test/static/js/2.6c2d2dd2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "80204c46bfd9dbe2cbea",
-    "url": "/trilogo-frontend-test/static/js/main.89806fc2.chunk.js"
+    "revision": "80528def6e573833e8d6",
+    "url": "/trilogo-frontend-test/static/js/main.74880625.chunk.js"
   },
   {
     "revision": "15fcecc26a8f19c42a36",
