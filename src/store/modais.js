@@ -12,8 +12,8 @@ export function modalCreate(state=false, action){
 export function modalUpdate(state={open: false, data: []}, action){
     switch(action.type){
       case 'OPEN_MODAL_UPDATE':
-        const {title, type, inCharge} = action.data
-        return {open: true, data: [title, type, inCharge]};
+        const {id, title, type, inCharge, imageURL} = action.data
+        return {open: true, data: [id, title, type, inCharge, imageURL]};
       case 'CLOSE_MODAL_UPDATE':
         return {open: false, data: []}
       default:

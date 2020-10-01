@@ -24,14 +24,15 @@ function cards(state = JSON.parse(localStorage.getItem("cards")) || [], action) 
         )
 
       case 'UPDATE_CARD':
-        return state.map(card => (card.id === action.data.cardId) ? 
+        
+        return state.map(user => (user.id === action.data.ticketId) ? 
           {
-            ...card,
+            ...user,
             title: action.data.description,
+            type: action.data.type,
             inCharge: action.data.user,
-            type: action.data.type 
-          } 
-          : card
+            imageURL: action.data.imageURL,
+          } : user
         )
 
       case 'DELETE_CARD':

@@ -35,8 +35,8 @@ function Card(props) {
 
   function handleEdit(){
     setPopView(false)
-    const {title, type, inCharge} = props
-    dispatch({type: 'OPEN_MODAL_UPDATE', data:{title, type, inCharge}})
+    const {id, title, type, inCharge, imageURL} = props
+    dispatch({type: 'OPEN_MODAL_UPDATE', data:{id, title, type, inCharge, imageURL}})
   }
   
   function handleDelete(){
